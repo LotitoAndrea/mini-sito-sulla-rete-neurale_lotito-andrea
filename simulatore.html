@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulatore - Neurone Interattivo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1>🧠 Reti Neurali</h1>
+            <ul>
+                <li><a href="index.html">Teoria</a></li>
+                <li><a href="simulatore.html" class="active">Simulatore</a></li>
+                <li><a href="neuronia.html">Neuronia</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h2>Simulatore di Neurone Artificiale</h2>
+            <p class="intro">Inserisci due valori e osserva come il neurone decide se attivarsi!</p>
+        </section>
+
+        <section class="simulator-container">
+            <div class="simulator-grid">
+                <!-- Pannello Input -->
+                <div class="simulator-panel">
+                    <h3>📊 Parametri di Input</h3>
+                    <div class="input-group">
+                        <label for="input1">
+                            Input 1 (x₁):
+                            <span class="value-display" id="value1">5</span>
+                        </label>
+                        <input type="range" id="input1" min="0" max="10" value="5" step="0.5">
+                    </div>
+                    <div class="input-group">
+                        <label for="input2">
+                            Input 2 (x₂):
+                            <span class="value-display" id="value2">5</span>
+                        </label>
+                        <input type="range" id="input2" min="0" max="10" value="5" step="0.5">
+                    </div>
+                </div>
+
+                <!-- Pannello Pesi e Soglia -->
+                <div class="simulator-panel">
+                    <h3>⚙️ Configurazione Neurone</h3>
+                    <div class="input-group">
+                        <label for="weight1">
+                            Peso 1 (w₁):
+                            <span class="value-display" id="weightValue1">0.6</span>
+                        </label>
+                        <input type="range" id="weight1" min="0" max="1" value="0.6" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label for="weight2">
+                            Peso 2 (w₂):
+                            <span class="value-display" id="weightValue2">0.4</span>
+                        </label>
+                        <input type="range" id="weight2" min="0" max="1" value="0.4" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label for="threshold">
+                            Soglia (θ):
+                            <span class="value-display" id="thresholdValue">5</span>
+                        </label>
+                        <input type="range" id="threshold" min="0" max="10" value="5" step="0.5">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visualizzazione Calcoli -->
+            <div class="calculation-display">
+                <h3>🧮 Calcoli in Tempo Reale</h3>
+                <div class="calc-steps">
+                    <div class="calc-step">
+                        <span class="step-label">Input × Peso 1:</span>
+                        <span class="step-value" id="calc1">0</span>
+                    </div>
+                    <div class="calc-step">
+                        <span class="step-label">Input × Peso 2:</span>
+                        <span class="step-value" id="calc2">0</span>
+                    </div>
+                    <div class="calc-step total">
+                        <span class="step-label">Somma Totale (Σ):</span>
+                        <span class="step-value" id="sum">0</span>
+                    </div>
+                    <div class="calc-step comparison">
+                        <span class="step-label">Confronto:</span>
+                        <span class="step-value" id="comparison">Σ ? θ</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lampadina -->
+            <div class="bulb-container">
+                <h3>💡 Output del Neurone</h3>
+                <div class="bulb" id="bulb">
+                    <div class="bulb-glow"></div>
+                    <svg viewBox="0 0 100 150" class="bulb-svg">
+                        <!-- Bulbo della lampadina -->
+                        <ellipse cx="50" cy="45" rx="35" ry="40" fill="currentColor" class="bulb-body"/>
+                        <path d="M 30 75 L 35 90 L 65 90 L 70 75 Z" fill="#888" class="bulb-base"/>
+                        <rect x="40" y="90" width="20" height="15" fill="#666" class="bulb-screw"/>
+                        <rect x="40" y="105" width="20" height="5" fill="#555" class="bulb-screw"/>
+                        <rect x="40" y="110" width="20" height="5" fill="#666" class="bulb-screw"/>
+                    </svg>
+                </div>
+                <div class="status-display">
+                    <div class="status-text" id="status">INATTIVO</div>
+                    <div class="output-value">Output: <span id="output">0</span></div>
+                </div>
+            </div>
+
+            <!-- Spiegazione -->
+            <div class="explanation-box">
+                <h4>📖 Come Funziona</h4>
+                <p id="explanation">
+                    Il neurone calcola la somma ponderata degli input moltiplicati per i rispettivi pesi.
+                    Se questa somma è maggiore o uguale alla soglia, il neurone si attiva (lampadina accesa).
+                    Altrimenti rimane inattivo (lampadina spenta).
+                </p>
+            </div>
+
+            <!-- Pulsante Reset -->
+            <div class="controls">
+                <button id="resetBtn" class="reset-button">🔄 Ripristina Valori Predefiniti</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lotito Andrea - Mini-sito Reti Neurali</p>
+    </footer>
+
+    <script src="neurone.js"></script>
+</body>
+</html>

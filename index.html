@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria - Neuroni Artificiali</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1>🧠 Reti Neurali</h1>
+            <ul>
+                <li><a href="index.html" class="active">Teoria</a></li>
+                <li><a href="simulatore.html">Simulatore</a></li>
+                <li><a href="neuronia.html">Neuronia</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h2>Cos'è un Neurone Artificiale?</h2>
+            <p class="intro">Un neurone artificiale è un modello matematico ispirato al funzionamento dei neuroni biologici nel cervello umano.</p>
+        </section>
+
+        <section class="content-grid">
+            <div class="card">
+                <div class="icon">🔌</div>
+                <h3>Input (Ingressi)</h3>
+                <p>Gli <strong>input</strong> sono i dati che il neurone riceve dall'esterno. Proprio come i neuroni biologici ricevono segnali attraverso i dendriti, il neurone artificiale riceve valori numerici.</p>
+                <div class="example">
+                    <strong>Esempio:</strong> x₁ = 5, x₂ = 3
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">⚖️</div>
+                <h3>Pesi (Weights)</h3>
+                <p>I <strong>pesi</strong> determinano l'importanza di ciascun input. Ogni input viene moltiplicato per il suo peso prima di essere elaborato dal neurone.</p>
+                <div class="example">
+                    <strong>Esempio:</strong> w₁ = 0.7, w₂ = 0.3
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">➕</div>
+                <h3>Somma Ponderata</h3>
+                <p>Il neurone calcola la <strong>somma ponderata</strong> moltiplicando ogni input per il suo peso e sommando i risultati.</p>
+                <div class="example">
+                    <strong>Formula:</strong> Σ = (x₁ × w₁) + (x₂ × w₂)
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎯</div>
+                <h3>Soglia (Threshold)</h3>
+                <p>La <strong>soglia</strong> (o bias) è il valore minimo che la somma ponderata deve raggiungere affinché il neurone si "attivi".</p>
+                <div class="example">
+                    <strong>Esempio:</strong> Se soglia = 5, il neurone si attiva solo se Σ ≥ 5
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">💡</div>
+                <h3>Funzione di Attivazione</h3>
+                <p>La <strong>funzione di attivazione</strong> decide se il neurone si attiva o no. La più semplice è la funzione a gradino (step function).</p>
+                <div class="example">
+                    <strong>Regola:</strong> Output = 1 se Σ ≥ soglia, altrimenti 0
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">📤</div>
+                <h3>Output (Uscita)</h3>
+                <p>L'<strong>output</strong> è il risultato finale del neurone: un valore (0 o 1) che indica se il neurone è attivo o inattivo.</p>
+                <div class="example">
+                    <strong>Significato:</strong> 1 = ATTIVO, 0 = INATTIVO
+                </div>
+            </div>
+        </section>
+
+        <section class="diagram-section">
+            <h3>Schema di un Neurone Artificiale</h3>
+            <div class="neuron-diagram">
+                <div class="diagram-content">
+                    <pre class="ascii-art">
+    INPUT          PESI         SOMMA        ATTIVAZIONE    OUTPUT
+                                                  
+     x₁ ────────► w₁ ──┐                         
+                        ├──► Σ ────► f(Σ) ────► y
+     x₂ ────────► w₂ ──┘      ▲         
+                               │         
+                           soglia (θ)
+                    </pre>
+                </div>
+                <div class="formula-box">
+                    <h4>Formula Completa:</h4>
+                    <p class="formula">y = f(w₁·x₁ + w₂·x₂ - θ)</p>
+                    <p class="formula-desc">dove f è la funzione di attivazione</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h3>Pronto a provare?</h3>
+            <p>Ora che conosci la teoria, prova il simulatore interattivo!</p>
+            <a href="simulatore.html" class="cta-button">Vai al Simulatore →</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lotito Andrea - Mini-sito Reti Neurali</p>
+    </footer>
+</body>
+</html>
